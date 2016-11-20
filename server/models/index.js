@@ -1,5 +1,5 @@
 //Index/ list of all models is a good idea when you have many
 module.exports = {
-    movie: require("./movie.js")/*,
+    video: require("./video.js")/*,
     picture: require("./picture.js")*/
 };

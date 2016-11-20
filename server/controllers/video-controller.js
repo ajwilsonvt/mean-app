@@ -6,10 +6,10 @@ var restful = require("node-restful");
 module.exports = function(app, route) {
     //setup the controller for REST;
     var rest = restful.model(
-        "movie",
-        app.models.movie
+        "video",
+        app.models.video
     ).methods(["get", "put", "post", "delete"]);
-        //provides these methods to the movie model
+        //provides these methods to the video model
 
     //register this API with the application
     rest.register(app, route);

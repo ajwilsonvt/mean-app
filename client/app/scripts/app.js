@@ -23,49 +23,49 @@ angular
             controller: 'MainCtrl',
             //controllerAs: 'main'
         })
-        .when('/movies', {
-            templateUrl: 'views/movies.html',
-            controller: 'MoviesCtrl',
-            //controllerAs: 'movies'
+        .when('/videos', {
+            templateUrl: 'views/videos.html',
+            controller: 'VideosCtrl',
+            //controllerAs: 'videos'
                 /*this had to be removed for the manually inputted
-                title/urls in movies.js to show up. controllerAs
+                title/urls in videos.js to show up. controllerAs
                 statements are only needed for nested views.*/
         })
-        .when('/create/movie', {
-          templateUrl: 'views/movie-add.html',
-          controller: 'MovieAddCtrl',
-          //controllerAs: 'movieAdd'
+        .when('/create/video', {
+          templateUrl: 'views/video-add.html',
+          controller: 'VideoAddCtrl',
+          //controllerAs: 'videoAdd'
         })
-        .when('/movie/:id', {
-          templateUrl: 'views/movie-view.html',
-          controller: 'MovieViewCtrl',
-          //controllerAs: 'movieView'
+        .when('/video/:id', {
+          templateUrl: 'views/video-view.html',
+          controller: 'VideoViewCtrl',
+          //controllerAs: 'videoView'
         })
-        .when('/movie/:id/delete', {
-          templateUrl: 'views/movie-delete.html',
-          controller: 'MovieDeleteCtrl',
-          //controllerAs: 'movieDelete'
+        .when('/video/:id/delete', {
+          templateUrl: 'views/video-delete.html',
+          controller: 'VideoDeleteCtrl',
+          //controllerAs: 'videoDelete'
         })
-        .when('/movie/:id/edit', {
-          templateUrl: 'views/movie-edit.html',
-          controller: 'MovieEditCtrl',
-          //controllerAs: 'movieEdit'
+        .when('/video/:id/edit', {
+          templateUrl: 'views/video-edit.html',
+          controller: 'VideoEditCtrl',
+          //controllerAs: 'videoEdit'
         })
         .otherwise({
             redirectTo: '/'
         });
     })
-    .factory('MovieRestangular', function (Restangular) {
+    .factory('VideoRestangular', function (Restangular) {
         return Restangular.withConfig(function (RestangularConfigurer) {
             RestangularConfigurer.setRestangularFields({
                 id: '_id'
             });
         });
     })
-    .factory('Movie', function (MovieRestangular) {
-        return MovieRestangular.service('movie');
+    .factory('Video', function (VideoRestangular) {
+        return VideoRestangular.service('video');
     })
-    //create an angular directive to show embedded movie
+    //create an angular directive to show embedded video
     .directive('youtube', function () {
         return {
             restrict: 'E', //restrict to element

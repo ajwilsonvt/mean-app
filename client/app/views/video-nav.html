@@ -1,0 +1,11 @@
+<ul class="nav nav-tabs">
+    <li role="presentation" ng-class="{active: viewVideo}">
+        <a ng-href="/#/video/{{ video._id }}">View</a></li>
+    <li role="presentation" ng-class="{active: editVideo}">
+        <a ng-href="/#/video/{{ video._id }}/edit">Edit</a></li>
+</ul>
+
+<!--active: viewVideo, if viewVideo scope from video-view.js controller
+is true, ng-class will add the class active
+
+ng-href allows me to use {{ }} to do model injections-->

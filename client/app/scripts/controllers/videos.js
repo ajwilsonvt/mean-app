@@ -5,19 +5,19 @@ Grunt, and spat errors if I used double quotes*/
 
 /**
  * @ngdoc function
- * @name clientApp.controller:MoviesCtrl
+ * @name clientApp.controller:VideosCtrl
  * @description
- * # MoviesCtrl
+ * # VideosCtrl
  * Controller of the clientApp
  */
 angular.module('clientApp')
-    .controller('MoviesCtrl', function ($scope, Movie) {
-        $scope.movies = Movie.getList().$object;
+    .controller('VideosCtrl', function ($scope, Video) {
+        $scope.videos = Video.getList().$object;
     });
 
     /*To manually populate:
-    .controller('MoviesCtrl', function ($scope) {
-        $scope.movies = [
+    .controller('VideosCtrl', function ($scope) {
+        $scope.videos = [
             {
                 title: '28 TYPES OF BALLERS ON THE COURT',
                 url: 'https://www.youtube.com/embed/UcJci08essY'
